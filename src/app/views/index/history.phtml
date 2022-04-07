@@ -1,0 +1,74 @@
+<?php
+// print_r($data);
+// die;
+include APP_PATH . "/views/header1.phtml";
+
+$forecast = $data["forecast"]["forecastday"];
+
+// print_r($forecast);
+// die;
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100%;">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+
+            <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+                <div class="col-md-9 col-lg-7 col-xl-5">
+
+                    <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                        <div class="card-body p-4">
+
+                            <div id="demo1" class="carousel slide" data-ride="carousel">
+
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-between mb-4 pb-2">
+                                            <div>
+                                                <h4 class="display-4"><strong><?php echo $data["location"]["name"] ?></strong></h4>
+                                                <p class="text-muted mb-0"><?php echo $data["location"]["region"] ?></p>
+                                                <p class="text-muted mb-0"><?php echo $data["location"]["localtime"] ?></p>
+                                            </div>
+                                            <div>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                        width="150px">
+                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card" style="border-radius: 25px;">
+          <div class="card-body p-4">
+
+            <div id="demo3" class="carousel slide" data-ride="carousel">
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
+                  
+                    <?php
+                    foreach($forecast as $k => $v) {
+                  ?>
+
+                    <div class="flex-column">
+                      <p class="small"><strong><?php echo $v["day"]["maxtemp_c"] ?></strong></p>
+                      <img src="<?php echo $v["hour"][12]["condition"]["icon"] ?>">
+                      <p class="small"><strong><?php echo $v["day"]["mintemp_c"] ?></strong></p>
+                      <br>
+                      <p class="mb-0"><strong><?php echo date('D', strtotime($v["date"])); ?>
+</strong></p>
+                    </div>
+
+
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+ 
+        </div>
+    

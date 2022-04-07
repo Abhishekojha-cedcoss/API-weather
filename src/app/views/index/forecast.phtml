@@ -1,0 +1,70 @@
+<?php
+$hour= (int)$hour;
+include APP_PATH . "/views/header1.phtml";
+
+$forecast = $data["forecast"]["forecastday"][0]["hour"];
+
+// print_r($forecast);
+// die;
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100%;">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+
+            <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+                <div class="col-md-9 col-lg-7 col-xl-5">
+
+                    <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                        <div class="card-body p-4">
+
+                            <div id="demo1" class="carousel slide" data-ride="carousel">
+
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-between mb-4 pb-2">
+                                            <div>
+                                                <h2 class="display-2"><strong><?php echo $data["current"]["temp_c"] ?>°C</strong></h2>
+                                                <p class="text-muted mb-0"><?php echo $data["location"]["name"] ?></p>
+                                            </div>
+                                            <div>
+                                                <img src="<?php echo $data["current"]["condition"]["icon"] ?>"
+                                                 width="150px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card mb-4" style="border-radius: 25px;">
+                        <div class="card-body p-4">
+
+                            <div id="demo2" class="carousel slide" data-ride="carousel">
+
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
+                                            <?php for ($v=$hour; $v<$hour+5; $v++) {
+                                            ?>
+                                                <div class="flex-column">
+                                                    <p class="small"><strong><?php echo $forecast[$v]["temp_c"]?>°C</strong></p>
+                                                    <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+                                                    <p class="mb-0"><strong><?php echo $v?>:00</strong></p>
+                                                
+                                                </div>
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+ 
+
+        </div>
+    </section>

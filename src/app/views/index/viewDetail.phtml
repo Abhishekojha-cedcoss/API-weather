@@ -1,0 +1,32 @@
+<?php
+
+include APP_PATH . "/views/header1.phtml";
+
+?>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
+    </head>
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="margin-top: 200px;">
+            <div class="col-12 col-md-5 col-sm-12 col-xs-12">
+                <div class="card text-white">
+                    <div class="div1 p-4 p-md-5 ">
+                        <h5><?php echo $data["location"]["name"] ?></h5>
+                        <h1><?php echo $data["current"]["temp_c"] ?><sup>°C </sup> </h1>
+                        <p class="my-0">Feels like <?php echo $data["current"]["feelslike_c"] ?></p>
+                        <h4 class="my-0">Mostly clear</h4>
+                        <br>
+                        </div>
+                        <div class=" row my-1 m-1 text-dark">
+                            <div class="col-4"><b>Humidity: <?php echo $data["current"]["humidity"] ?> </b> </div>
+                            <div class="col-4"><b>Wind Direction: <?php echo $data["current"]["wind_dir"] ?></b></div>
+                            <div  class="col-4"><b>Pressure: <?php echo $data["current"]["pressure_in"] ?></b></div>
+                        </div>
+                    </div>
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,57 @@
+<?php
+// print_r($data["alert"]);
+// die;
+include APP_PATH."/views/header1.phtml";
+
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center 
+        pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">All Alerts</h1>
+        </div>
+
+        <div class="table-responsive">
+            <?php
+            if (!empty($data["alert"])) {
+            $html = "";
+            $html .= '<table id="myTable" class="table table-striped table-sm text-white">     
+        <tr">
+          <th scope="col-2" class="text-white">headline</th>
+          <th scope="col" class="text-white">Msgtype</th>
+          <th scope="col" class="text-white">Severity</th>
+          <th scope="col" class="text-white">Urgency</th>
+          <th scope="col" class="text-white">Areas</th>
+          <th scope="col" class="text-white">Effective</th>
+        </tr>
+      
+      ';
+            foreach ($data["alert"] as $k => $v) {
+                $html .= '<tr>
+        <td>' . $v["headline"] . '</td>
+        <td>' . $v["msgtype"] . '</td>
+        <td>' . $v["severity"] . '</td>
+        <td>' . $v["urgency"] . '</td>
+        <td>' . $v["areas"] . '</td>
+        <td>' . $v["effective"] . '</td>
+        </tr>';
+            }
+            $html .= '</table>';
+            echo $html;
+        } else {
+            echo "<h2> No Records Found!</h2>";
+        }
+            ?>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="<?php echo URLROOT?>/node_modules/bootstrap/dist/js/bootstrap.bundle.js" 
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+  crossorigin="anonymous"></script>
+
+</body>
+
+</html>

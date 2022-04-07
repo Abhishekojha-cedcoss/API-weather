@@ -1,0 +1,28 @@
+<?php
+include APP_PATH . "/views/header1.phtml";
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="card mb-4" style="border-radius: 25px;">
+                <div class="card-body p-4">
+
+                    <div id="demo2" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h3 class=" border-bottom">Time Zone:</h3>
+                                <b><?php echo $data["location"]["tz_id"] ?></b>
+
+                                <br>
+                                <br>
+                                <h3 class=" border-bottom">Country:</h3>
+                                <b><?php echo $data["location"]["country"] ?></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+</main>

@@ -1,0 +1,32 @@
+<?php
+include APP_PATH . "/views/header.phtml";
+
+
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100%;">
+<div class="row d-flex justify-content-center mt-100 mb-100">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title m-b-0 text-dark">Results (<?php echo count($data); ?>)</h5>
+            </div>
+            <ul class="list-style-none p-1">
+
+            <?php foreach ($data as $key => $v) {
+                ?>
+                <li class="d-flex no-block card-body"> <i class="fa fa-check-circle w-30px m-t-5"></i>
+                    <div> <a href="http://localhost:8080/index/viewDetail?url=<?php echo $v["url"]?>" class="m-b-0 font-medium p-0" data-abc="true"><?php echo $v["name"] ?></a> <span class="text-muted"><?php echo $v["region"] ?></span> </div>
+                    <div class="ml-auto">
+                        <div class="tetx-right">
+                            <h5 class="text-muted m-b-0">26</h5> <span class="text-muted font-16"><?php echo $v["country"] ?></span>
+                        </div>
+                    </div>
+                </li>
+<hr style="color: black;">
+<?php } ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </div>

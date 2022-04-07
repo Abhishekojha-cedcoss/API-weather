@@ -1,0 +1,28 @@
+<?php
+
+// print_r($data);
+// die;
+include APP_PATH . "/views/header1.phtml";
+
+?>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
+    </head>
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="margin-top: 200px;">
+            <div class="col-12 col-md-5 col-sm-12 col-xs-12">
+                <div class="card text-white">
+                    <div class="div1 p-4 p-md-5 ">
+                        <h2><?php echo $data["location"]["name"] ?></h2>
+                        <p class="my-0"><b>Sunrise:</b><?php echo $data["astronomy"]["astro"]["sunrise"] ?> </p>
+                        <p class="my-0"><b>Sunset:</b> <?php echo $data["astronomy"]["astro"]["sunset"] ?></p>
+                        <p class="my-0"><b>Moon Phase:</b>
+                            <?php echo $data["astronomy"]["astro"]["moon_phase"] ?></p>
+                            <p class="my-0"><b>Moon Rise:</b> <?php echo $data["astronomy"]["astro"]["moonrise"] ?></p>
+                    </div>
+                    <div class="div2"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
