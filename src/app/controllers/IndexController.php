@@ -54,6 +54,13 @@ class IndexController extends Controller
         $this->view->data = json_decode($response->getBody(), true);
 
     }
+    /**
+     * airqualityAction function
+     * 
+     * Display the air-quality page
+     *
+     * @return void
+     */
     public function airqualityAction()
     {
         $url = $this->request->get("url");
